@@ -83,7 +83,7 @@
              <tr><td><button type="submit" id="submit" name="availability" value="availability"></button></td></tr>
             <tr>
                 <td>
-                    <a href="index.jsp" >Click here</a>
+                    <a href="availability.jsp" >Click here</a>
                 </td>
             </tr>
             <tr><td><button type="submit" id="submit" name="booking" value="booking">Reserve Vehicle</button></td></tr>

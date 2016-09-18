@@ -21,8 +21,8 @@
         <%
         String DateIn=(String)session.getAttribute("checkdateIn");
         String DateOut=(String)session.getAttribute("checkdateOut");
-        int driverId=(int)session.getAttribute("driverId");
-        int vehicleId=(int)session.getAttribute("vehicleId");
+        //int driverId=(int)session.getAttribute("driverId");
+        //int vehicleId=(int)session.getAttribute("vehicleId");
         
         Connection conn;
         Statement stmt;
@@ -30,8 +30,14 @@
         Connection con;
         Class.forName("com.mysql.jdbc.Driver");
         con=DriverManager.getConnection("jdbc:mysql://localhost/cab","root","");
-        stmt=con.createStatement(); 
-        rs=stmt.executeQuery("SELECT ");
+        stmt=con.createStatement();
+         
+        rs=stmt.executeQuery("SELECT driver.Id FROM booking RIGHT JOIN driver ON driver.Id=booking.driverId WHERE checkInDate NOT  BETWEEN '"+DateIn+"' AND '"+DateOut+"' ");
+        while(rs.next())
+        {
+             String FirstName=rs.getString("Id");
+             out.println(FirstName);
+        }
          %>
     </body>
 </html>

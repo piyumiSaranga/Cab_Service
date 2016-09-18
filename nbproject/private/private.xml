@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/viewImageDetails.jsp</file>
-            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/dispalyDriverImages.jsp</file>
-            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/viewvehicles.jsp</file>
-            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/viewFullDetails.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/viewMyBooking.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/index.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/admin.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/login.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/src/java/cancelBooking.java</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/home.css</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/loginDriver.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/src/java/LoginServt.java</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/customerbookingview.jsp</file>
+            <file>file:/C:/Users/Saranga/Documents/NetBeansProjects/CabService/web/CusReg.jsp</file>
         </group>
     </open-files>
 </project-private>

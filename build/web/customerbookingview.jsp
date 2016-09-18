@@ -37,13 +37,11 @@
         Connection conn;
         Statement stmt;
         ResultSet rs;
-        
-       
-         Connection con;
+        Connection con;
       
          Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/cab","root","");
-                 stmt=con.createStatement();
+         con=DriverManager.getConnection("jdbc:mysql://localhost/cab","root","");
+         stmt=con.createStatement();
          //rs=stmt.executeQuery("SELECT customer.fname,customer.lname,customer.street1,customer.street2,customer.city,customer.mobileNo,driver.firstName,driver.lastName,driver.tel FROM booking  INNER JOIN customer ON customer.username=booking.username INNER JOIN driver ON driver.Id=booking.driverId WHERE checkInDate BETWEEN '"+dateIn+"' AND '"+dateOut+"'");
          rs=stmt.executeQuery("SELECT customer.fname,customer.lname,customer.street1,customer.street2,customer.city,customer.mobileNo,driver.firstName,driver.lastName,driver.tel,vehicle.vehicleNo FROM booking INNER JOIN customer ON customer.username=booking.username INNER JOIN driver ON driver.Id=booking.driverId INNER JOIN vehicle ON vehicle.Id=booking.vehicleId WHERE checkInDate BETWEEN '"+dateIn+"' AND '"+dateOut+"'");
   while(rs.next())
@@ -85,7 +83,8 @@
                 <td><%=driverlName%></td> 
                 <td><%=tel%></td> 
                 <td><%=vehicleNo%></td>
-                    
+ 
+ 
  <%
   }
                     

@@ -33,15 +33,19 @@ public class checkBookingServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             checkInDate=request.getParameter("checkIn");
             checkOutDate=request.getParameter("checkOut");
+            HttpSession session=request.getSession();
+            
+            session.setAttribute("dateIn",checkInDate);
+            session.setAttribute("dateOut",checkOutDate);
             query="SELECT username FROM booking WHERE checkInDate BETWEEN '"+checkInDate+"' AND '"+checkOutDate+"'";
             dbconn=new DatabaseConnection();
             conn=dbconn.setConnection();
             stmt=conn.createStatement();
            res=dbconn.getResult(query, conn);
-            HttpSession session=request.getSession();
+            //HttpSession session=request.getSession();
             
-            session.setAttribute("dateIn",checkInDate);
-            session.setAttribute("dateOut",checkOutDate); 
+            //session.setAttribute("dateIn",checkInDate);
+            //session.setAttribute("dateOut",checkOutDate); 
             if(res.next())
             {
                

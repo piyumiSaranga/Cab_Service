@@ -6,7 +6,10 @@
 	margin:0;
 	padding:0;
 }
-
+body
+{
+    
+}
 #header
 {
 	width:100%;
@@ -92,9 +95,11 @@ table tr td input
 	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.4);
 }
 
+
+
 table tr td button
 {
-	width:100%;
+	width: 90%;
 	height:45px;
 	border:0px;
 	background:rgba(12,45,78,11);
@@ -150,7 +155,7 @@ font-size: 36px;
 }
 	
 #nav{
-	background:#099;
+	background:#6b6b6c;
 	font-family:Verdana, Geneva, sans-serif;
 	margin-top:2.5cm;
 	//border-radius:25px;
@@ -366,6 +371,11 @@ font-size: 36px;
     font-size: 30px;
     font-weight: 200;
     text-align:left;
+}
+#topic{
+    text-align: center;
+    font-size: 24pt;
+    color: #009;
 }
 			
 .midhead{

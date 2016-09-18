@@ -57,10 +57,14 @@ public final class customerbookingview_jsp extends org.apache.jasper.runtime.Htt
       out.write("        \n");
       out.write("\n");
       out.write("        <title>JSP Page</title>\n");
+      out.write("  <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">\n");
+      out.write("  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
+      out.write("  <script src=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"></script>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("        <div class=\"container\">\n");
       out.write("       \n");
-      out.write("        <table border=\"1\" >\n");
+      out.write("            <table class=\"table table-hover\" >\n");
       out.write("            <tr><th>Customer FirstName </th> <th>Customer LastName </th><th>Address Street1 </th><th>Address Street2 </th><th>Address City </th><th>Mobile Number</th><th>Driver Firstname </th> <th>Driver Lastname </th><th>Driver Mobile Number </th><th>Vehicle Number </th></tr>\n");
       out.write("      ");
 
@@ -80,17 +84,17 @@ public final class customerbookingview_jsp extends org.apache.jasper.runtime.Htt
          Connection con;
       
          Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/cab","root","");
-                 stmt=con.createStatement();
-         rs=stmt.executeQuery("SELECT username FROM booking");
-         //rs=stmt.executeQuery("SELECT customer.fname,customer.lname,customer.street1,customer.street2,customer.city,customer.mobileNo,driver.firstName,driver.lastName,driver.tel,vehicle.vehicleNo FROM booking INNER JOIN customer ON customer.username=booking.username INNER JOIN driver ON driver.Id=booking.driverId INNER JOIN vehicle ON vehicle.Id=booking.vehicleId WHERE checkInDate BETWEEN '"+dateIn+"' AND '"+dateOut+"'");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/cab","root","");
+         stmt=con.createStatement();
+         //rs=stmt.executeQuery("SELECT customer.fname,customer.lname,customer.street1,customer.street2,customer.city,customer.mobileNo,driver.firstName,driver.lastName,driver.tel FROM booking  INNER JOIN customer ON customer.username=booking.username INNER JOIN driver ON driver.Id=booking.driverId WHERE checkInDate BETWEEN '"+dateIn+"' AND '"+dateOut+"'");
+         rs=stmt.executeQuery("SELECT customer.fname,customer.lname,customer.street1,customer.street2,customer.city,customer.mobileNo,driver.firstName,driver.lastName,driver.tel,vehicle.vehicleNo FROM booking INNER JOIN customer ON customer.username=booking.username INNER JOIN driver ON driver.Id=booking.driverId INNER JOIN vehicle ON vehicle.Id=booking.vehicleId WHERE checkInDate BETWEEN '"+dateIn+"' AND '"+dateOut+"'");
   while(rs.next())
       
   {
-      String username=rs.getString("username");
-      /*
+      //String username=rs.getString("username");
+      
       String FirstName=rs.getString("fname");
-      out.print(FirstName);
+     
     
        String LastName=rs.getString("lname");
     
@@ -109,15 +113,41 @@ public final class customerbookingview_jsp extends org.apache.jasper.runtime.Htt
      int tel=rs.getInt("tel");
      
       String vehicleNo=rs.getString("vehicleNo");
-*/
+
      
       out.write("\n");
       out.write("            \n");
       out.write("            <tr>\n");
       out.write("                <td>");
-      out.print(username);
+      out.print(FirstName);
       out.write("</td>\n");
-      out.write("                \n");
+      out.write("                <td>");
+      out.print(LastName);
+      out.write("</td>\n");
+      out.write("                <td>");
+      out.print(street1);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(street2);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(city);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(mobileNo);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(driverfName);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(driverlName);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(tel);
+      out.write("</td> \n");
+      out.write("                <td>");
+      out.print(vehicleNo);
+      out.write("</td>\n");
       out.write("                    \n");
       out.write(" ");
 
@@ -125,8 +155,8 @@ public final class customerbookingview_jsp extends org.apache.jasper.runtime.Htt
                     
    
       out.write("\n");
-      out.write("      \n");
-      out.write("       \n");
+      out.write("   </div>\n");
+      out.write("            \n");
       out.write("        </table>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

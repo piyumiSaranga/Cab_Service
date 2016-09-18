@@ -133,8 +133,6 @@ $(function(){
         <%
              Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cab","root", "");
-        
-           // out.print("HI"+userName);
             %>
        <div id="header">
 		<div id="left">
@@ -196,6 +194,12 @@ $(function(){
             	<a href="about.jsp">About us</a>
             </li>
             <li>
+            	<a href="dispalyDriverImages.jsp">Driver Gallery</a>
+            </li>
+            <li>
+            	<a href="viewvehicles.jsp">Vehicle Gallery</a>
+            </li>
+            <li>
             	<a href="#">Contact us</a>
             </li>
             <li>
@@ -213,7 +217,7 @@ $(function(){
              {
                  out.println("<a href='#'>Customer</a>");
                  out.println("<ul>");
-                 out.println("<li><a href='CusReg.jsp'>View my bookings</a></li>");
+                 out.println("<li><a href='viewMyBooking.jsp'>View my bookings</a></li>");
                 
                  out.println("</ul>");
              }
@@ -286,26 +290,27 @@ $(function(){
     </div></td></tr>
     </table>
         
-</center>        
+</center>     <!--   
            <div id="how-title">
                <h3 id="how-it-works">
     		
-            	Featured Advertisement
+            	Log Here
                </h3>
                
     	</div>
-               <br>
+           -->    <br>
+               <!--
    <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+   
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+   
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
@@ -339,7 +344,7 @@ $(function(){
         </div>
      </div>
 
-    <!-- Left and right controls -->
+    
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -358,191 +363,29 @@ $(function(){
                
 </div>
 </div>
-
-<div id="div1">
-    <!--
-     <div class="container">
-
-
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login As Customer</button>
-
-
-  <div class="modal fade" id="myModal" role="dialog" >
-    <div class="modal-dialog">
-    
-     
-      <div class="modal-content" style="background-color:#0FC; width: 375px; height: 500px;" >
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Customer Login</h4>
-        </div>
-        <div class="modal-body">
-          <div id="loginbox" style=" width: 300px; height: 10px; margin-left: 20px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" > 
-             <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Login</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-                    </div>     
-
-                    <div style="padding-top:30px" class="panel-body" >
-
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            
-                        <form id="loginform" class="form-horizontal"  role="form" action="LoginServt" method="POST" >
-                                    
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="user" value="" placeholder="username">                                        
-                                    </div>
-                                
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="pwd" placeholder="password">
-                                    </div>
-                                    
-
-                                
-                            <div class="input-group">
-                                      <div class="checkbox">
-                                        <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                        </label>
-                                      </div>
-                                    </div>
-
-
-                                <div style="margin-top:10px" class="form-group">
-                                    
-
-                                    <div class="col-sm-12 controls">
-                                        <button type="submit" name="login" class="btn btn-success">Login</button>
-                                     </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <div class="col-md-12 control">
-                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                            Don't have an account! 
-                                        <a href="CusReg.jsp" >
-                                            Sign Up Here
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>    
-                            </form>     
-                    </div>
-             </div>
-        </div>
-        <div class="modal-footer" style="margin-top:350px">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
-  -->
-  <!--
-  driver
-  -->
+-->
+<center><table >
+       
+    <tr>
+<div id="div1">   
    <div class="container">
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Login As Customer</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal1" role="dialog" >
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content" style="background-color:#0FC; width: 375px; height: 500px;" >
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Customer Login</h4>
-        </div>
-        <div class="modal-body">
-          <div id="loginbox" style=" width: 300px; height: 10px; margin-left: 20px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" > 
-             <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Login</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-                    </div>     
-
-                    <div style="padding-top:30px" class="panel-body" >
-
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            
-                        <form id="loginform" class="form-horizontal"  role="form" action="LoginServt" method="POST" >
-                                    
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="user" value="" placeholder="username">                                        
-                                    </div>
-                                
-                            <div style="margin-bottom: 25px" class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="pwd" placeholder="password">
-                                    </div>
-                                    
-
-                                
-                            <div class="input-group">
-                                      <div class="checkbox">
-                                        <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                        </label>
-                                      </div>
-                                    </div>
-
-
-                                <div style="margin-top:10px" class="form-group">
-                                    <!-- Button -->
-
-                                    <div class="col-sm-12 controls">
-                                        <button type="submit" name="login" class="btn btn-success">Login</button>
-                                     </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <div class="col-md-12 control">
-                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                            Don't have an account! 
-                                        <a href="CusReg.jsp" >
-                                            Sign Up Here
-                                        </a>
-                                        </div>
-                                    </div>
-                                </div>    
-                            </form>     
-                    </div>
-             </div>
-        </div>
-        <div class="modal-footer" style="margin-top:350px">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
   
-</div>
-
-</div>
+  <td><img src="images/cus.jpg" class="img-circle"><br>
+      <a href="login.jsp">  <button type="button" class="btn btn-info btn-lg"> Customer Login</button></a>
+  </td>
+  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+  
 <div id="div2">
-   
-      
   
-  <!--
-  driver
-  -->
    <div class="container">
 
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Login As Driver</button>
-
+  <td> 
+      <img src="images/driver.jpg" class="img-circle"><br>
+     <a href="loginDriver.jsp">  <button type="button" class="btn btn-info btn-lg"> Driver Login</button></a>
+  </td>
+  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
   <!-- Modal -->
   <div class="modal fade" id="myModal2" role="dialog" >
     <div class="modal-dialog">
@@ -622,11 +465,14 @@ $(function(){
 </div>
 
 </div>
+
 <div class="container">
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">Login As Receptionist</button>
-
+  <td>
+      <img src="images/admin1.jpg"  class="img-circle"><br>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">Admin Login</button>
+  </td>
   <!-- Modal -->
   <div class="modal fade" id="myModal3" role="dialog" >
     <div class="modal-dialog">
@@ -706,8 +552,11 @@ $(function(){
 </div>
 
 </div>
-
+</td>
+                </tr>
+ 
 </div>          
-               
+              </table>
+</center>
     </body>
 </html>

@@ -1,16 +1,18 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import ="java.sql.*" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-                
-                <link rel="stylesheet" href="home.css" type="text/css" />
+        <link rel="stylesheet" href="home.css" type="text/css" />
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.js"></script>
          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -80,12 +82,99 @@ body{
     
     </head>
     <body>
-        <div id="header">
+         <%
+             Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cab","root", "");
+            %>
+       <div id="header">
 		<div id="left">
-    		<label>
-            	QCabs Taxi Service
-            </label>
+                    <label>
+                    <img src="images/header.png">
+                    </label>
+                    <label>
+                        www.mycitycab.lk <br>
+                        071 3 87 90 52
+                    </label>
     	</div>
+           
+               
+           <div id="right">
+               <div id="content">
+                   <label>
+                   Follow Us On
+                   <br>
+                   <img src="images/facebook.png">
+                   <img src="images/google.jpg">
+                   <img src="images/twitter.jpg">
+                   <img src="images/youtube.jpg">
+
+               </label>
+                   <br>
+                   <% 
+                  String userName=(String)session.getAttribute("user");
+                  String userRole=(String)session.getAttribute("userRole");
+                  String nic=(String)session.getAttribute("nic");
+                   
+                   %>
+               </div>
+               </div>
+       </div>
+               <hr>
+         <div id="nav">
+	<div id="nav_wrapper">
+    	<ul>
+        	<li>
+            	<a href="index.jsp">Home</a>
+            </li>
+            <li>
+            	<a href="about.jsp">About us</a>
+            </li>
+            <li>
+            	<a href="dispalyDriverImages.jsp">Driver Gallery</a>
+            </li>
+            <li>
+            	<a href="viewvehicles.jsp">Vehicle Gallery</a>
+            </li>
+            <li>
+            	<a href="#">Contact us</a>
+            </li>
+            <li>
+                <%  if(userName!=null){
+             if(userRole=="Admin") {
+                 out.println("<a href='admin.jsp'>Admin</a>");
+                 //out.println("<ul>");
+                 //out.println("<li><a href='CusReg.jsp'>Register Customer</a></li>");
+                 //out.println("<li><a href='vehicle.jsp'>Register Vehicle</a></li>");
+                 //out.println("<li><a href='viewCustomerBooking.jsp'>Customer Bookings</a></li>");
+                // out.println("</ul>");
+             }
+             
+             else if(userRole=="Customer")
+             {
+                 out.println("<a href='#'>Customer</a>");
+                 out.println("<ul>");
+                 out.println("<li><a href='viewMyBooking.jsp'>View my bookings</a></li>");
+                
+                 out.println("</ul>");
+             }
+             else if(userRole=="Driver")
+             {
+                 out.println("<a href='#'>Driver</a>");
+                 out.println("<ul>");
+                 out.println("<li><a href='#'>To do Bookings</a></li>");
+                 out.println("<li><a href='distance.jsp'>Find the way</a></li>");
+                 out.println("</ul>");
+             }
+             
+             }  
+          %>
+            </li>
+        </ul>
+        
+                </div>
+         </div><br><br>
+         <div id="topic">
+             Sign In Here To Get Our Service
         </div>
         <div class="container">    
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"> 

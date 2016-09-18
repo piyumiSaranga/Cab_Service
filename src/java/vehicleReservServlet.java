@@ -43,6 +43,9 @@ public class vehicleReservServlet extends HttpServlet {
            ending=request.getParameter("endingPlace");
            vehicleId=request.getParameter("vehicle");
            driverId=request.getParameter("driver");
+           HttpSession session=request.getSession();
+           session.setAttribute("checkdateIn",checkInDate);
+             session.setAttribute("checkdateOut",checkOutDate);
            
            dbconn=new DatabaseConnection();
            conn=dbconn.setConnection();
@@ -67,7 +70,7 @@ public class vehicleReservServlet extends HttpServlet {
         rd.forward(request, response);  
     }
 } else if (request.getParameter("booking") != null) {
-    query="INSERT INTO booking VALUES(default,'"+username+"','"+checkInDate+"','"+checkOutDate+"','"+checkInTime+"','"+checkOutTime+"','"+start+"','"+ending+"','"+vehicleId+"','"+driverId+"','Book')";
+    query="INSERT INTO booking VALUES(default,'"+username+"','"+checkInDate+"','"+checkOutDate+"','"+checkInTime+"','"+checkOutTime+"','"+start+"','"+ending+"','"+vehicleId+"','"+driverId+"','Book',default)";
     int i=stmt.executeUpdate(query);
             if(i>0)
             {

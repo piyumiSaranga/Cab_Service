@@ -58,6 +58,7 @@ try
  ResultSet rs;
  Statement stmt;
  
+ 
         
              Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cab","root", "");
@@ -97,6 +98,7 @@ out.print(""+e.getMessage());
       out.write("\n");
       out.write(" \n");
       out.write("</table>\n");
+      out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
       out.write("<pre>");

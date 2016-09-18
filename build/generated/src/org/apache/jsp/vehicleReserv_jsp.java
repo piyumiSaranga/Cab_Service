@@ -122,7 +122,7 @@ public final class vehicleReserv_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("             <tr><td><button type=\"submit\" id=\"submit\" name=\"availability\" value=\"availability\"></button></td></tr>\n");
       out.write("            <tr>\n");
       out.write("                <td>\n");
-      out.write("                    <a href=\"index.jsp\" >Click here</a>\n");
+      out.write("                    <a href=\"availability.jsp\" >Click here</a>\n");
       out.write("                </td>\n");
       out.write("            </tr>\n");
       out.write("            <tr><td><button type=\"submit\" id=\"submit\" name=\"booking\" value=\"booking\">Reserve Vehicle</button></td></tr>\n");

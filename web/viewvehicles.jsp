@@ -14,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="CSS/displayDriverImage.css">
+        <link rel="stylesheet" href="home.css" type="text/css" />
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.js"></script>
@@ -54,6 +55,59 @@ $(function(){
 </script>
     </head>
     <body>
+         <%
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cab","root", "");
+        %>
+        <div id="header">
+		<div id="left">
+                    <label>
+                    <img src="images/header.png">
+                    </label>
+                    <label>
+                        www.mycitycab.lk <br>
+                        071 3 87 90 52
+                    </label>
+    	</div>
+           
+               
+           <div id="right">
+               <div id="content">
+                   <label>
+                   Follow Us On
+                   <br>
+                   <img src="images/facebook.png">
+                   <img src="images/google.jpg">
+                   <img src="images/twitter.jpg">
+                   <img src="images/youtube.jpg">
+
+               </label>
+               </div>
+           </div>
+        </div>
+        <hr>
+         <div id="nav">
+	<div id="nav_wrapper">
+    	<ul>
+        	<li>
+            	<a href="index.jsp">Home</a>
+            </li>
+            <li>
+            	<a href="about.jsp">About us</a>
+            </li>
+            <li>
+            	<a href="dispalyDriverImages.jsp">Driver Gallery</a>
+            </li>
+            <li>
+            	<a href="viewvehicles.jsp">Vehicle Gallery</a>
+            </li>
+            <li>
+            	<a href="#">Contact us</a>
+            </li>
+             </ul>
+        
+                </div>
+         </div>
         <%
             {
                 ResultSet rs;
@@ -67,8 +121,7 @@ $(function(){
                 String vehicletype=null;
                 int vehicleSeats=0;
                 
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cab","root", "");
+                
                 stmt=con.createStatement();
                 
                 rs=stmt.executeQuery("SELECT vehicle.vehicleNo,vehicle.Id,vehicle.seats,vehicle.type,vehicleimages.fullImage,vehicleimages.image1,vehicleimages.image2,vehicleimages.image3 FROM vehicleimages INNER JOIN vehicle ON vehicle.vehicleNo=vehicleimages.vehicleNumber");

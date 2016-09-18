@@ -48,6 +48,14 @@
         <servlet-name>addDriverImageServlet</servlet-name>
         <servlet-class>addDriverImageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>checkBooking</servlet-name>
+        <servlet-class>checkBooking</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cancelBooking</servlet-name>
+        <servlet-class>cancelBooking</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServt</servlet-name>
         <url-pattern>/LoginServt</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>addDriverImageServlet</servlet-name>
         <url-pattern>/addDriverImageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkBooking</servlet-name>
+        <url-pattern>/checkBooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cancelBooking</servlet-name>
+        <url-pattern>/cancelBooking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
